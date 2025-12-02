@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
-\usepackage{parskip,times, hyperref}
-
+\usepackage{parskip,times,hyperref,graphicx,enumerate}
+\usepackage[margin=1in]{geometry}
 \begin{document}
 \centerline{\large \emph{R02 Network Architectures Essay 2}}
 \vspace{2em}
@@ -8,8 +8,8 @@
 \section{Introduction}
 In this essay I will be covering two papers; PCC Vivace -- Online-Learning Congestion Control and DOTE.
 Both of these papers show how ML techniques can be applied to networks, the former being an application of a learning framework to congestion control.
-The latter applying ML to enable robust traffic engineering. Whilst both techniques overall aim to maintain network performance and prevent overload, congestion control is reactive, whereas traffic engineering is proactive.
-A naive approach would be to treat ML/AI as a magic-wand to networking, in reality the applicability of these techniques is highly dependent on the network constraints and how best you can tailor the ML technique to solve the problem.
+The latter applying ML to enable robust traffic engineering. Whilst both techniques overall aim to maintain network performance and prevent overload, congestion control is reactive and operates in small timeframes (milliseconds), whereas traffic engineering is proactive and operates in timeframes of minutes.
+A naive approach would be to treat ML/AI as a one-size fits all solution in networking, in reality the applicability of these techniques is highly dependent on the network constraints and how best you can tailor the ML technique to solve the problem.
 \section{PCC Vivace}
 PCC Vivace is a novel rate-control protocol which realizes the PCC framework from an online-learning perspective.
 The original realization of PCC, known as "PCC Allegro" takes a black box network-modeling approach to the problem.
@@ -37,10 +37,22 @@ On the flip-side, lets say you were to implement a DNN for congestion control (a
 The solution would largely be a black-box, a DNN could probably discover some useful parameter configurations which trade off metrics even more optimally than Vivace does over MIs but would require substantial compute, which isn't feasible for typical end devices like mobile devices.
 Additionally how would a DNN react to network conditions that differ substantially from what they're trained on?
 Vivace can loosely be described as an ML/AI approach, framing the PCC problem from an online-learning persepctive and using a subset of optimisation techniques to overcome the identified issues seen in Allegro.
+Vivace operates on a "no-regret" learning model, the near-optimality guarantees about Vivace's rate selection are relative to the best fixed-rate in hindsight.
+This has some limitations, in reality the optimal rate for the environment most likely isn't fixed over a given time-period as networks are highly dynamic.
+The best fixed-rate in hindsight is a weak benchmark for the optimality of Vivace.
+\subsection{Bullet point notes}
+Some extra things worth mentioning:
+\begin{itemize}
+\item Vivace relies on empirical measurements of throughput, latency and loss over MIs. These measurements can be unreliable due to network conditions.
+\item There's contention between accurate measurements and reactivity. The confidence metric used in the paper sacrifices reactivity, but limiting confidence will degrade measurement accuracy/usefulness.
+\item In short lived flows/bursty networks, can Vivace meaningfully minimise regret?
+\end{itemize}
 
 \section{DOTE}
-\section{Comparisons}
+
+\section{General Principles for ML/AI in networking}
 Between Vivace and DOTE there's this trade-off between time-scale and complexity.
+% Both are designed in mind for worst-case safety rather than average-case.
 
 \section{Further work}
 In 2020, the same research group followed up with PCC Proteus, applying the PCC Vivace framework to "Scavenger" traffic.
