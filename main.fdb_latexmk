@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1764642798.84728 "main.tex" "main.pdf" "main" 1764642799.09242 0
+["pdflatex"] 1764697471.82183 "main.tex" "main.pdf" "main" 1764697471.97691 0
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1755987285 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1755987285 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1755987285 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -66,9 +66,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1764633043 325445 e037c2d0d08ad8cbac81cfa7969967b5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1764633042 2008249 6e5fb22177b952bf9f22f35b57e9110e ""
-  "main.aux" 1764642799.06307 852 99496ed1f95b37fc418c7b3b72495586 "pdflatex"
-  "main.out" 1764642799.06477 789 01ede5db6dfd4b53e66f3b7f7b9f3fda "pdflatex"
-  "main.tex" 1764642798.03525 6772 699ad0ce0a1ffe8d0aee3a3eb7411c32 ""
+  "main.aux" 1764697471.95998 852 423248caca645546f3832bc3b01b931e "pdflatex"
+  "main.out" 1764697471.96017 789 01ede5db6dfd4b53e66f3b7f7b9f3fda "pdflatex"
+  "main.tex" 1764697470.90835 13006 9ccf39989e70ac859a00a7b75fad425e ""
   (generated)
   "main.aux"
   "main.log"
